@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.7.5 on win32)" generated="20220418 18:21:40.253" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="D:\Robot Projects\Basic_IWEC_Project\Tests">
+<suite id="s1-s1" name="Login" source="D:\Robot Projects\Basic_IWEC_Project\Tests\Login.robot">
+<test id="s1-s1-t1" name="TC0001_Login with valid credintials">
+<kw name="Open app" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Homepage_URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220418 18:21:40.425" level="INFO">Opening browser 'chrome' to base url 'http://qacourse.churlinoski.mk/'.</msg>
+<status status="PASS" starttime="20220418 18:21:40.425" endtime="20220418 18:21:43.380"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220418 18:21:43.380" endtime="20220418 18:21:43.490"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:40.424" endtime="20220418 18:21:43.491"/>
+</kw>
+<kw name="Navigate to Login/Register page" library="Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginREgisterBtn_TopMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:43.491" level="INFO">Clicking element '//div[@class="tools-icon my-account"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:43.491" endtime="20220418 18:21:43.891"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LoginLabel_LoginPage}</arg>
+<arg>Login</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 18:21:43.892" level="INFO">Verifying element '//div[@class="u-column1 col-1"]/h2' contains exact text 'Login'.</msg>
+<status status="PASS" starttime="20220418 18:21:43.892" endtime="20220418 18:21:43.913"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:43.491" endtime="20220418 18:21:43.913"/>
+</kw>
+<kw name="Login User" library="Login">
+<arg>${Valid_Login_Username}</arg>
+<arg>${Valid_Login_Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UsernameINput_Login}</arg>
+<arg>${arg1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:43.915" level="INFO">Typing text 'nikola.iw454' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220418 18:21:43.915" endtime="20220418 18:21:43.992"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PasswordInput_Login}</arg>
+<arg>${arg2}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:43.993" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg timestamp="20220418 18:21:44.027" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220418 18:21:44.136" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220418 18:21:43.992" endtime="20220418 18:21:44.136"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LoginBtn_LoginPage}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:44.137" level="INFO">Clicking button '//*[@name="login"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:44.136" endtime="20220418 18:21:44.568"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:43.915" endtime="20220418 18:21:44.569"/>
+</kw>
+<kw name="Verify that user is logged in" library="Login">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//li[@class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:44.569" endtime="20220418 18:21:44.592"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//li[@class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active"]</arg>
+<arg>Dashboard</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 18:21:44.592" level="INFO">Verifying element '//li[@class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active"]' contains exact text 'Dashboard'.</msg>
+<status status="PASS" starttime="20220418 18:21:44.592" endtime="20220418 18:21:44.612"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id="post-9"]/div/div/p[1]/strong[1]</arg>
+<arg>nikola.iw454</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 18:21:44.613" level="INFO">Verifying element '//*[@id="post-9"]/div/div/p[1]/strong[1]' contains exact text 'nikola.iw454'.</msg>
+<status status="PASS" starttime="20220418 18:21:44.612" endtime="20220418 18:21:44.635"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:44.569" endtime="20220418 18:21:44.636"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220418 18:21:44.636" endtime="20220418 18:21:46.699"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220418 18:21:40.424" endtime="20220418 18:21:46.700"/>
+</test>
+<status status="PASS" starttime="20220418 18:21:40.280" endtime="20220418 18:21:46.706"/>
+</suite>
+<suite id="s1-s2" name="Register" source="D:\Robot Projects\Basic_IWEC_Project\Tests\Register.robot">
+<test id="s1-s2-t1" name="TC0004_Register user with valid credintials">
+<kw name="Open app" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Homepage_URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220418 18:21:46.762" level="INFO">Opening browser 'chrome' to base url 'http://qacourse.churlinoski.mk/'.</msg>
+<status status="PASS" starttime="20220418 18:21:46.761" endtime="20220418 18:21:48.859"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220418 18:21:48.859" endtime="20220418 18:21:48.985"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:46.761" endtime="20220418 18:21:48.986"/>
+</kw>
+<kw name="Navigate to Login/Register page" library="Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginREgisterBtn_TopMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:48.990" level="INFO">Clicking element '//div[@class="tools-icon my-account"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:48.989" endtime="20220418 18:21:49.444"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LoginLabel_LoginPage}</arg>
+<arg>Login</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 18:21:49.445" level="INFO">Verifying element '//div[@class="u-column1 col-1"]/h2' contains exact text 'Login'.</msg>
+<status status="PASS" starttime="20220418 18:21:49.444" endtime="20220418 18:21:49.468"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:48.987" endtime="20220418 18:21:49.468"/>
+</kw>
+<kw name="Generate Random Username" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${random1}</var>
+<arg>12</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 18:21:49.469" level="INFO">${random1} = 953286916093</msg>
+<status status="PASS" starttime="20220418 18:21:49.468" endtime="20220418 18:21:49.469"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${RandomUsername}</var>
+<arg>User${random1}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220418 18:21:49.469" level="INFO">${RandomUsername} = User953286916093</msg>
+<status status="PASS" starttime="20220418 18:21:49.469" endtime="20220418 18:21:49.469"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RandomUsername}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 18:21:49.470" level="INFO">${RandomUsername} = User953286916093</msg>
+<status status="PASS" starttime="20220418 18:21:49.469" endtime="20220418 18:21:49.470"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:49.468" endtime="20220418 18:21:49.470"/>
+</kw>
+<kw name="Generate Random Email" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${random2}</var>
+<arg>15</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 18:21:49.471" level="INFO">${random2} = ryjvlfnaogythsa</msg>
+<status status="PASS" starttime="20220418 18:21:49.470" endtime="20220418 18:21:49.471"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${randomEmail}</var>
+<arg>${random2}@example.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220418 18:21:49.471" level="INFO">${randomEmail} = ryjvlfnaogythsa@example.com</msg>
+<status status="PASS" starttime="20220418 18:21:49.471" endtime="20220418 18:21:49.471"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${randomEmail}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 18:21:49.471" level="INFO">${randomEmail} = ryjvlfnaogythsa@example.com</msg>
+<status status="PASS" starttime="20220418 18:21:49.471" endtime="20220418 18:21:49.472"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:49.470" endtime="20220418 18:21:49.472"/>
+</kw>
+<kw name="Generate Random Password" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${randomPassword}</var>
+<arg>15</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 18:21:49.472" level="INFO">${randomPassword} = 5GmERCIrSvifRvz</msg>
+<status status="PASS" starttime="20220418 18:21:49.472" endtime="20220418 18:21:49.472"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${randomPassword}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 18:21:49.473" level="INFO">${randomPassword} = 5GmERCIrSvifRvz</msg>
+<status status="PASS" starttime="20220418 18:21:49.472" endtime="20220418 18:21:49.473"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:49.472" endtime="20220418 18:21:49.473"/>
+</kw>
+<kw name="Register User" library="Register">
+<arg>${RandomUsername}</arg>
+<arg>${randomEmail}</arg>
+<arg>${randomPassword}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href="#"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:49.474" level="INFO">Clicking element '//a[@href="#"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:49.474" endtime="20220418 18:21:49.514"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UsernameInput_Register}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:49.515" level="INFO">Typing text 'User953286916093' into text field 'id:reg_username'.</msg>
+<status status="PASS" starttime="20220418 18:21:49.514" endtime="20220418 18:21:49.597"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EmailInput_Register}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:49.597" level="INFO">Typing text 'ryjvlfnaogythsa@example.com' into text field 'id:reg_email'.</msg>
+<status status="PASS" starttime="20220418 18:21:49.597" endtime="20220418 18:21:49.680"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PasswordInput_Register}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:49.681" level="INFO">Typing password into text field 'id:reg_password'.</msg>
+<msg timestamp="20220418 18:21:49.780" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220418 18:21:49.866" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220418 18:21:49.681" endtime="20220418 18:21:49.867"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>2</arg>
+<arg>Click Element</arg>
+<arg>${RegisterBtn}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RegisterBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:49.867" level="INFO">Clicking element '//*[@id="customer_login"]/div[2]/form/p[4]/button'.</msg>
+<status status="PASS" starttime="20220418 18:21:49.867" endtime="20220418 18:21:50.301"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:49.867" endtime="20220418 18:21:50.301"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:49.473" endtime="20220418 18:21:50.301"/>
+</kw>
+<kw name="Verify that User is registred" library="Register">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@id="post-9"]/div/nav/ul/li[1]/a</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220418 18:21:50.301" endtime="20220418 18:21:50.312"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LoggedUser}</var>
+<arg>//*[@id="post-9"]/div/div/p[1]/strong[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:50.333" level="INFO">${LoggedUser} = User953286916093</msg>
+<status status="PASS" starttime="20220418 18:21:50.312" endtime="20220418 18:21:50.333"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Should Be Equal As Strings</arg>
+<arg>${LoggedUser}</arg>
+<arg>${RandomUsername}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220418 18:21:50.333" endtime="20220418 18:21:50.334"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:50.301" endtime="20220418 18:21:50.334"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220418 18:21:50.334" endtime="20220418 18:21:52.401"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220418 18:21:46.760" endtime="20220418 18:21:52.401"/>
+</test>
+<status status="PASS" starttime="20220418 18:21:46.711" endtime="20220418 18:21:52.407"/>
+</suite>
+<suite id="s1-s3" name="Search" source="D:\Robot Projects\Basic_IWEC_Project\Tests\Search.robot">
+<test id="s1-s3-t1" name="Search Avaliable Item">
+<kw name="Open app" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Homepage_URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220418 18:21:52.475" level="INFO">Opening browser 'chrome' to base url 'http://qacourse.churlinoski.mk/'.</msg>
+<status status="PASS" starttime="20220418 18:21:52.475" endtime="20220418 18:21:55.562"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220418 18:21:55.562" endtime="20220418 18:21:55.678"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:52.475" endtime="20220418 18:21:55.678"/>
+</kw>
+<kw name="Search item" library="Search">
+<arg>${SEARCH_ITEM}</arg>
+<kw name="Open Search Box" library="Search">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SearchIcon_TopMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:55.679" level="INFO">Clicking element '//span[@class="tools-icon header-search-icon"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:55.679" endtime="20220418 18:21:55.732"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SearchBoxTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:55.732" endtime="20220418 18:21:55.755"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${SearchBoxTitle}</arg>
+<arg>TYPE TO SEARCH</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 18:21:55.756" level="INFO">Verifying element '//span[@class="dialog-search-title"]' contains exact text 'TYPE TO SEARCH'.</msg>
+<status status="PASS" starttime="20220418 18:21:55.755" endtime="20220418 18:21:55.775"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:55.679" endtime="20220418 18:21:55.775"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchInputFieldLocator_SearchBox}</arg>
+<arg>${Search_Item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:55.775" level="INFO">Typing text 'beanie' into text field '//input[@id="woocommerce-product-search-field-3"]'.</msg>
+<status status="PASS" starttime="20220418 18:21:55.775" endtime="20220418 18:21:55.839"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SearchBoxButtonLocator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220418 18:21:55.839" endtime="20220418 18:21:55.848"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//*[@type="submit"])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:55.850" level="INFO">Clicking element '(//*[@type="submit"])[2]'.</msg>
+<status status="PASS" starttime="20220418 18:21:55.848" endtime="20220418 18:21:56.265"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:55.678" endtime="20220418 18:21:56.265"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_ITEM}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220418 18:21:56.283" level="INFO">Current page contains text 'beanie'.</msg>
+<status status="PASS" starttime="20220418 18:21:56.265" endtime="20220418 18:21:56.283"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220418 18:21:56.283" endtime="20220418 18:21:58.357"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220418 18:21:52.474" endtime="20220418 18:21:58.357"/>
+</test>
+<status status="PASS" starttime="20220418 18:21:52.418" endtime="20220418 18:21:58.360"/>
+</suite>
+<status status="PASS" starttime="20220418 18:21:40.256" endtime="20220418 18:21:58.365"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login">Tests.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Register">Tests.Register</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Search">Tests.Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
