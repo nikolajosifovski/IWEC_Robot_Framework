@@ -40,3 +40,4 @@ Search and Verify all results
 
 Search TC4
     Log    TC4
+    Log     Another line
